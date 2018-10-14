@@ -1,0 +1,1377 @@
+C:\Octave\Octave-4.4.0\octave.vbs --force-gui
+  % pkg load symbolic
+  % syms x
+  % ff=(x)^3 - 9*(x) + 3
+  % fd=diff(ff)
+  % ans fd - Exibe a Funcao derivada
+
+Exercícios sugeridos (Captiluos 2 e 3)
+
+Cap 2.1  
+
+Questão 01: Utilize o método da bissecção para determiner p3 para f(x) = x^0,5 - cos(x)  em [0, 1].
+A dica aqui é pegar a 3a iteração do processo a reposta é a Raíz ou o Ponto Médio
+>> bissec(0, 1, 0.01, 2)
+entre com a funcao: x^0.5 - cos(x)
+
+ ----- iteracao 0 -----
+Limite Inferiro  : 0
+Limite Superior  : 1
+Ponto Medio      : 0.5
+f(Ponto Medio)   : -0.170476
+|f(Ponto Medio)| : 0.170476
+Tolerancia       : 0.01
+iter =  1
+
+ ----- iteracao 1 -----
+Limite Inferiro  : 0.5
+Limite Superior  : 1
+Ponto Medio      : 0.75
+f(Ponto Medio)   : 0.134337
+|f(Ponto Medio)| : 0.134337
+Tolerancia       : 0.01
+iter =  2
+
+ ----- iteracao 2 -----
+Limite Inferiro  : 0.5
+Limite Superior  : 0.75
+Ponto Medio      : 0.625
+f(Ponto Medio)   : -0.0203937
+|f(Ponto Medio)| : 0.0203937
+Tolerancia       : 0.01
+
+A RAIZ eh : 0.625
+ans =  0.62500
+
+
+Método manual:
+a1 = 0
+b1 = 1
+P1 = (a1+b1)/2 => (0+1)/2 = 0,5
+F(P1) = -0,170476
+f(a)*f(P1) > 0 - Tem mesmos sinais
+
+a2 = P1 = 0,5
+b2 = b1 = 1
+P2 = (0,5 + 1)/2 = 0,75
+F(P1) = -0,134337
+f(b2)*f(P2) > 0 - Tem mesmos sinais
+
+a3 = a2 = 0,5
+b3 = P2 = 0,75
+P3 = (0,5 + 0,75)/2 = 0,625
+F(P3) = -0,0203937
+
+Resposta: P3 = 0,625
+
+
+Questão 02: Seja f(x) = 3*(x + 1)*(x - 0.5)*(x - 1)=0. Utilize o método da bissecção nos intervalos a seguir para determiner p3.
+a. [-2, 1.5]
+b. [-1.25, 2.5]
+
+a)
+>> bissec(-2, 1.5, 0.01, 2)
+entre com a funcao: 3*(x+1)*(x-0.5)*(x-1)
+
+ ----- iteracao 0 -----
+Limite Inferiro  : -2
+Limite Superior  : 1.5
+Ponto Medio      : -0.25
+f(Ponto Medio)   : 2.10938
+|f(Ponto Medio)| : 2.10938
+Tolerancia       : 0.01
+iter =  1
+
+ ----- iteracao 1 -----
+Limite Inferiro  : -2
+Limite Superior  : -0.25
+Ponto Medio      : -1.125
+f(Ponto Medio)   : -1.29492
+|f(Ponto Medio)| : 1.29492
+Tolerancia       : 0.01
+iter =  2
+
+ ----- iteracao 2 -----
+Limite Inferiro  : -1.125
+Limite Superior  : -0.25
+Ponto Medio      : -0.6875
+f(Ponto Medio)   : 1.87866
+|f(Ponto Medio)| : 1.87866
+Tolerancia       : 0.01
+iter =  3
+A RAIZ eh : -0.6875
+ans = -0.68750
+
+
+b)
+>> bissec(-1.25, 2.5, 0.01, 2)
+entre com a funcao: 3*(x+1)*(x-0.5)*(x-1)
+
+ ----- iteracao 0 -----
+Limite Inferiro  : -1.25
+Limite Superior  : 2.5
+Ponto Medio      : 0.625
+f(Ponto Medio)   : -0.228516
+|f(Ponto Medio)| : 0.228516
+Tolerancia       : 0.01
+iter =  1
+
+ ----- iteracao 1 -----
+Limite Inferiro  : 0.625
+Limite Superior  : 2.5
+Ponto Medio      : 1.5625
+f(Ponto Medio)   : 4.59448
+|f(Ponto Medio)| : 4.59448
+Tolerancia       : 0.01
+iter =  2
+
+ ----- iteracao 2 -----
+Limite Inferiro  : 0.625
+Limite Superior  : 1.5625
+Ponto Medio      : 1.09375
+f(Ponto Medio)   : 0.34964
+|f(Ponto Medio)| : 0.34964
+Tolerancia       : 0.01
+iter =  3
+A RAIZ eh : 1.09375
+ans =  1.0938
+
+
+
+Questão 3: Utilize o método da bissecção para determinar as soluções com precisão de 10^2 para x^3 ? 7*x^2 + 14*x ? 6 = 0 em cada intervalo.
+Dica: pegar a última raiz, com a precisaão mais proxima de 10^2
+a. [0, 1]
+ ----- iteracao 11 -----
+Limite Inferiro  : 0.585449
+Limite Superior  : 0.585938
+Ponto Medio      : 0.585693
+f(Ponto Medio)   : -0.000635623
+|f(Ponto Medio)| : 0.000635623
+Tolerancia       : 0.001
+A RAIZ eh : 0.585693
+ans =  0.58569
+
+b. [1, 3,2]
+ ----- iteracao 9 -----
+Limite Inferiro  : 2.99805
+Limite Superior  : 3.00234
+Ponto Medio      : 3.0002
+f(Ponto Medio)   : -0.000195236
+|f(Ponto Medio)| : 0.000195236
+Tolerancia       : 0.001
+A RAIZ eh : 3.0002
+ans =  3.0002
+
+c. [3,2, 4]
+ ----- iteracao 8 -----
+Limite Inferiro  : 3.4125
+Limite Superior  : 3.41563
+Ponto Medio      : 3.41406
+f(Ponto Medio)   : -0.000176907
+|f(Ponto Medio)| : 0.000176907
+Tolerancia       : 0.001
+A RAIZ eh : 3.41406
+ans =  3.4141
+
+
+Questão 5:Utilize o método da bissecção para determinar as soluções com precisão de 10^5 para os problemas a seguir.
+
+a. x ? 2^?x = 0 para 0 = x = 1 => [0,1]
+ ----- iteracao 15 -----
+Limite Inferiro  : 0.641174
+Limite Superior  : 0.641205
+Ponto Medio      : 0.64119
+f(Ponto Medio)   : 5.53319e-006
+|f(Ponto Medio)| : 5.53319e-006
+Tolerancia       : 1e-005
+A RAIZ eh : 0.64119
+ans =  0.64119
+
+b. e^x ? x^2 + 3x ? 2 = 0 para 0 = x = 1 => [0,1]
+ ----- iteracao 16 -----
+Limite Inferiro  : 0.257523
+Limite Superior  : 0.257538
+Ponto Medio      : 0.25753
+f(Ponto Medio)   : -2.75985e-007
+|f(Ponto Medio)| : 2.75985e-007
+Tolerancia       : 1e-005
+A RAIZ eh : 0.25753
+ans =  0.25753
+
+c. 2x cos(2x) ? (x + 1)^2 = 0 para ?3 = x = ?2 e ? 1 = x = 0 => [-3, -2] e [-1,0]
+[-3, -2]
+ ----- iteracao 16 -----
+Limite Inferiro  : -2.19131
+Limite Superior  : -2.1913
+Ponto Medio      : -2.19131
+f(Ponto Medio)   : 9.46558e-006
+|f(Ponto Medio)| : 9.46558e-006
+Tolerancia       : 1e-005
+A RAIZ eh : -2.19131
+ans = -2.1913
+
+[-1,0]
+ ----- iteracao 17 -----
+Limite Inferiro  : -0.798164
+Limite Superior  : -0.798157
+Ponto Medio      : -0.798161
+f(Ponto Medio)   : 2.15707e-006
+|f(Ponto Medio)| : 2.15707e-006
+Tolerancia       : 1e-005
+A RAIZ eh : -0.798161
+ans = -0.79816
+
+d. x cosx ? 2x^2 + 3x -1 = 0 para 0,2 = x = 0,3 e 1,2 = x = 1,3 => [0.2, 0.3] e [1.2, 1.3]
+[0.2, 0.3]
+ ----- iteracao 13 -----
+Limite Inferiro  : 0.297522
+Limite Superior  : 0.297534
+Ponto Medio      : 0.297528
+f(Ponto Medio)   : -5.77935e-006
+|f(Ponto Medio)| : 5.77935e-006
+Tolerancia       : 1e-005
+A RAIZ eh : 0.297528
+ans =  0.29753
+
+[1.2, 1.3]
+ ----- iteracao 13 -----
+Limite Inferiro  : 1.25662
+Limite Superior  : 1.25663
+Ponto Medio      : 1.25662
+f(Ponto Medio)   : 2.93603e-006
+|f(Ponto Medio)| : 2.93603e-006
+Tolerancia       : 1e-005
+A RAIZ eh : 1.25662
+ans =  1.2566
+
+
+Questão 7:
+a. Esboce os gráficos de y = x e y = 2 senx.
+Tracar no Excel o grafico das duas funções: F(x) = x e F(x) = 2*sin(x) usando o mesmo intervalo, como as razes estão de ZERO a DOIS, usa-se esse intervalo [0,2]
+
+
+b. Utilize o método da bissecção para determinar uma aproximação com precisão de 10^5 do primeiro valor positivo de x com x = 2 sin x.
+
+ ----- iteracao 13 -----
+Limite Inferiro  : 1.89548
+Limite Superior  : 1.89551
+Ponto Medio      : 1.8955
+f(Ponto Medio)   : 2.19242e-006
+|f(Ponto Medio)| : 2.19242e-006
+Tolerancia       : 1e-005
+A RAIZ eh : 1.8955
+ans =  1.8955
+
+
+
+Questão 11: Seja f(x) = (x+2)*(x+1)*x*(x?1)*3*(x?2). Para qual zero de f o método da bissecção converge quando aplicado aos intervalos a seguir?
+
+a. [3, 2,5]
+ ----- iteracao 14 -----
+Limite Inferiro  : 1.99982
+f(xl)            : -0.0131786
+Limite Superior  : 2.00015
+f(xu)            : 0.0109898
+Ponto Medio      : 1.99998
+f(Ponto Medio)   : -0.0010986
+|f(Ponto Medio)| : 0.0010986
+Tolerancia       : 0.01
+A RAIZ eh : 1.99998
+
+b. [2.5, 3]
+ ----- iteracao 14 -----
+Limite Inferiro  : -2.00015
+f(xl)            : -0.0109898
+Limite Superior  : -1.99982
+f(xu)            : 0.0131786
+Ponto Medio      : -1.99998
+f(Ponto Medio)   : 0.0010986
+|f(Ponto Medio)| : 0.0010986
+Tolerancia       : 0.01
+A RAIZ eh : -1.99998
+
+c. [?1.75, 1.5]
+ ----- iteracao 11 -----
+Limite Inferiro  : -1.00098
+f(xl)            : 0.0175924
+Limite Superior  : -0.99939
+f(xu)            : -0.0109807
+Ponto Medio      : -1.00018
+f(Ponto Medio)   : 0.0032964
+|f(Ponto Medio)| : 0.0032964
+Tolerancia       : 0.01
+A RAIZ eh : -1.00018
+
+d. [?1.5, 1.75]
+ ----- iteracao 11 -----
+Limite Inferiro  : 0.99939
+f(xl)            : 0.0109807
+Limite Superior  : 1.00098
+f(xu)            : -0.0175924
+Ponto Medio      : 1.00018
+f(Ponto Medio)   : -0.0032964
+|f(Ponto Medio)| : 0.0032964
+Tolerancia       : 0.01
+A RAIZ eh : 1.00018
+
+
+Questão 12(8a): Determine uma aproximação de 3^0.5 correta até 10^-4, utilizando o Algoritimo da Bissecção 
+Sugestão: considere f(x) = x^2 - 3
+Soluçaõ:
+Obter uma aproximação para x = 3^0.5 = Isso informa que está entre o intervalo posito de [1.6 a 1.8]
+Usando o intervalo: [1.6, 1.8] ou [-1.6, 1.8]
+ ----- iteracao 7 -----
+Limite Inferiro  : 1.73125
+f(xl)            : -0.00277344
+Limite Superior  : 1.73281
+f(xu)            : 0.00263916
+Ponto Medio      : 1.73203
+f(Ponto Medio)   : -6.7749e-005
+|f(Ponto Medio)| : 6.7749e-005
+Tolerancia       : 0.0001
+A RAIZ eh : 1.73203
+ans =  1.7321288
+
+
+Questão 10: Seja f(x) = (x+2)*((x+1)^2)*x*((x-1)^3)*(x-2).
+Para qual zero de f o método da bissecção converge quando aplicado aos intervalos a seguir?
+
+a. [?1.5, 2.5]
+----- iteracao 2 -----
+f(xl)            : -1.58203
+f(xl)            : 0.527344
+Limite Inferiro  : -0.5
+Limite Superior  : 0.5
+Ponto Medio      : 0
+f(Ponto Medio)   : 0
+|f(Ponto Medio)| : 0
+Tolerancia       : 1e-005
+A RAIZ eh : 0
+ans = 0
+
+b. [?0.5, 2.4]
+ ----- iteracao 19 -----
+f(xl)            : -1.06812e-005
+f(xl)            : 1.14441e-005
+Limite Inferiro  : -2.67029e-006
+Limite Superior  : 2.86102e-006
+Ponto Medio      : 9.53674e-008
+f(Ponto Medio)   : 3.8147e-007
+|f(Ponto Medio)| : 3.8147e-007
+Tolerancia       : 1e-005
+A RAIZ eh : 9.53674e-008
+ans =  0.000000095367
+
+c. [?0.5, 3]
+ ----- iteracao 22 -----
+f(xl)            : -2.57492e-005
+f(xl)            : 3.43323e-005
+Limite Inferiro  : 2
+Limite Superior  : 2
+Ponto Medio      : 2
+f(Ponto Medio)   : 4.29154e-006
+|f(Ponto Medio)| : 4.29154e-006
+Tolerancia       : 1e-005
+A RAIZ eh : 2
+ans =  2.0000
+
+d. [?3, ?0.5]
+ ----- iteracao 24 -----
+f(xl)            : 1.28746e-005
+f(xl)            : -1.93119e-005
+Limite Inferiro  : -2
+Limite Superior  : -2
+Ponto Medio      : -2
+f(Ponto Medio)   : -3.21865e-006
+|f(Ponto Medio)| : 3.21865e-006
+Tolerancia       : 1e-005
+A RAIZ eh : -2
+ans = -2.0000
+
+
+Questão 13:Determine uma aproximação de (25)^-3 correta até 10?4, utilizando o algoritmo da bissecção.
+[Sugestão: Considere f(x) = x^3 ? 25.]
+Obter uma aproximação para x= (25)^-3, isso corresponde a x^3 = 25, ou x^3 - 25 = 0, que é a raís para f(x) = x^3 ? 25
+
+Posso trabalhar com o intervalo de [2.5, 3.5] ou [2.5, 3]
+
+ ----- iteracao 16 -----
+f(xl)            : -0.000166921
+f(xl)            : 0.000224462
+Limite Inferiro  : 2.92401
+Limite Superior  : 2.92403
+Ponto Medio      : 2.92402
+f(Ponto Medio)   : 2.87699e-005
+|f(Ponto Medio)| : 2.87699e-005
+Tolerancia       : 0.0001
+A RAIZ eh : 2.92402
+ans =  2.9240
+
+
+Questão 20: Seja f(x) = (x ? 1)^10, p = 1 e pn = 1 + 1/n. Mostre que |f(pn)| < 10^?3 sempre que n > 1, mas que |p ? pn|<10^?3 requer n > 1000.
+
+f(x) = (x ? 1)^10
+f(p) = (p-1)^10
+f(pn) = (pn-1)^10 => ((1 + 1/n) -1)^10 => (1/n)^10
+
+Então assumindo |f(pn)| < 0.0001, quando n > 1
+Sempre que n > 1 entao |f(pn)| < 0.0001
+
+Mostrar que |p ? pn|< 0.0001 quando n > 1000
+Se p =1 e pn = 1 + 1/n
+então p - pn = 1 - (1 + 1/n) = -1/n
+|p - pn| = |-1/n| => |p - pn| = 1/n < 0.0001 => n > 1/0.0001 => n > 1000
+
+Com isso, quando n > 1000, teremos |p ? pn|< 0.0001
+
+Questão 20(8a): Uma particula começa a se movimentar sobre um plano inclinado liso cujo angulo TETA está variando a velocidade constante
+
+dTETA/dt = omega < 0
+
+Depois de t segundos, a posição do objeto é dado por
+
+x(t) = - (g/2*omega^2)*((e^omega*t - e^-omega*t)/2 - sen(omega*t))
+
+Suponha que a particula tenha se deslocado 1.7 pé em um segundo. Determine, com precisão de 10^-5, a velocidade omega com a qual teta varia.
+Suponha que g = 32,17 pes/s^2
+
+solução:
+Supondo que em t0 a particula está na posição 0, assim em t(0) x = 0
+Sabendo que a parrticula andou 1.7 pés  em 01s, assim em t(1) x = 1.7
+
+Temos:
+x(1) = - (32.17/2*omega^2)*((e^omega*t - e^-omega*t)/2 - sen(omega*t))
+1.7 * 2*omega^2 = -32.17*((e^omega*t - e^-omega*t)/2 - sen(omega*t))
+0 = 3.4*omega^2 + 32.17*((e^omega*t - e^-omega*t)/2 - sen(omega*t))
+como f(omega) = 0, então
+f(omega) = 3.4*omega^2 + 32.17*((e^omega*t - e^-omega*t)/2 - sen(omega*t))
+como t= 1
+f(x) = 3.4*x^2 + 32.17*(((e^x - e^-x)/2) - sin(x))
+intervalo: [-0.4, -0.2]
+
+ ----- iteracao 12 -----
+Limite Inferiro  : -0.31709
+f(xl)            : -3.02657e-005
+Limite Superior  : -0.317041
+f(xu)            : 2.23765e-005
+Ponto Medio      : -0.317065
+f(Ponto Medio)   : -3.94058e-006
+|f(Ponto Medio)| : 3.94058e-006
+Tolerancia       : 1e-005
+A RAIZ eh : -0.317065
+ans = -0.31707
+
+
+Cap 2.3
+
+Questão 2: Seja f(x) = ?1*(x)^3 ? cos*(x) e p0 = ? 1. Utilize o método de Newton para determiner p2.
+f'(x) = -3x^2 - sin(x)
+
+Poderíamos utilizar p0 = 0?
+
+p2 =  -0.890301
+ ----- iteracao 2 -----
+Limite Inferiro    : -1
+f(xl)              : 0.459698
+Limite Superior    : 1
+f(xu)              : -1.5403
+Newton             : -0.890301
+|f(Newton)|        : 0.0765057
+Tolerancia         : 0.01
+
+Se usarmos p0 = 0, então f'(0) = 0, e p1 não pode ser definido, pois as f(xl) e f(xu) tem o mesmo sinal.
+ ----- inicio -----
+f(xl)              : -1
+f(xu)              : -1.5403
+Nao eh possivel continuar, nao existem raizes no intervaloA RAIZ eh : 0
+ans = 0
+
+Questão 5: Utilize o método de Newton para encontrar soluções com precisão de 0.0001 para os problemas a seguir.
+
+a. x^3 ? 2x^2 ? 5 = 0, [1, 4]
+f'(x) = 3*x^2 - 4*x
+ ----- iteracao 8 -----
+Limite Inferiro    : 1
+f(xl)              : -6
+Limite Superior    : 4
+f(xu)              : 27
+Newton             : 2.69065
+|f(Newton)|        : 5.30655e-010
+Tolerancia         : 0.0001
+A RAIZ eh : 2.69065
+ans =  2.6906
+
+b. x^3 + 3*x^2 ? 1 = 0, [?3, ?2]
+f'(x) = 3*x^2 + 6*x
+ ----- iteracao 3 -----
+Limite Inferiro    : -3
+f(xl)              : -1
+Limite Superior    : -2
+f(xu)              : 3
+Newton             : -2.87939
+|f(Newton)|        : 1.34871e-007
+Tolerancia         : 0.0001
+A RAIZ eh : -2.87939
+ans = -2.8794
+
+c. x ? cosx = 0, [0, p/2]
+f'(x) = sin(x) + 1
+ ----- iteracao 2 -----
+Limite Inferiro    : 0
+f(xl)              : -1
+Limite Superior    : 1.5708
+f(xu)              : 1.5708
+Newton             : 0.739089
+|f(Newton)|        : 6.29113e-006
+Tolerancia         : 0.0001
+A RAIZ eh : 0.739089
+ans =  0.73909
+
+d. x ? 0.8 ? 0.2*sen(x) = 0, [0, p/2]
+f'(x) = 1 - (cos(x)/5)
+ ----- iteracao 2 -----
+Limite Inferiro    : 0
+f(xl)              : -0.8
+Limite Superior    : 1.5708
+f(xu)              : 0.570796
+Newton             : 0.964334
+|f(Newton)|        : 3.53098e-009
+Tolerancia         : 0.0001
+A RAIZ eh : 0.964334
+ans =  0.96433
+
+Questão 6: Utilize o método de Newton para encontrar soluções com precisão de 0.00001 para os problemas a seguir.
+
+a. e^(x) + 2^(-x) + 2*cos(x) ? 6 = 0 para 1 = x = 2 [1.0, 2.0]
+f'(x) = e^x - 2*sin(x) - (2^(-x))*log(2)
+ ----- iteracao 3 -----
+Limite Inferiro    : 1
+f(xl)              : -1.70111
+Limite Superior    : 2
+f(xu)              : 0.806762
+Newton             : 1.82938
+|f(Newton)|        : 5.51493e-007
+Tolerancia         : 1e-005
+A RAIZ eh : 1.82938
+ans =  1.8294
+
+
+b. log(x ? 1) + cos(x ? 1) = 0 para 1,3 = x = 2 [1.3, 2.0] // log = ln
+f'(x) = (1/(x-1)) - sin(x-1)
+ ----- iteracao 3 -----
+Limite Inferiro    : 1.3
+f(xl)              : -0.248636
+Limite Superior    : 2
+f(xu)              : 0.540302
+Newton             : 1.39775
+|f(Newton)|        : 6.32592e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 1.39775
+ans =  1.3977
+
+c. 2*x*cos(2*x) ? (x ? 2)^2 = 0 para 2 = x = 3 e 3 = x = 4 [2.0, 3.0] e [3.0, 4.0]
+f'(x) =  -4*x*sin(2*x) - 2*x + 2*cos(2*x) + 4
+[2.0, 3.0]
+ ----- iteracao 2 -----
+Limite Inferiro    : 2
+f(xl)              : -2.61457
+Limite Superior    : 3
+f(xu)              : 4.76102
+Newton             : 2.37069
+|f(Newton)|        : 2.12384e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 2.37069
+ans =  2.3707
+
+[3.0, 4.0]
+ ----- iteracao 4 -----
+Limite Inferiro    : 3
+f(xl)              : 4.76102
+Limite Superior    : 4
+f(xu)              : -5.164
+Newton             : 3.72211
+|f(Newton)|        : 4.53824e-010
+Tolerancia         : 1e-005
+A RAIZ eh : 3.72211
+ans =  3.7221
+
+d. (x?2)^2 ? log(x) = 0 para 1 = x = 2 e e = x = 4 [1.0, 2.0] e [2.7183, 4.0] // log = ln(
+f'(x) = 2*x -4 - x^-1
+[1.0, 2.0]
+ ----- iteracao 3 -----
+Limite Inferiro    : 1
+f(xl)              : 1
+Limite Superior    : 2
+f(xu)              : -0.693147
+Newton             : 1.41239
+|f(Newton)|        : 2.61432e-007
+Tolerancia         : 1e-005
+A RAIZ eh : 1.41239
+ans =  1.4124
+
+[2.7183, 4.0]
+ ----- iteracao 3 -----
+Limite Inferiro    : 2.71828
+f(xl)              : -0.484071
+Limite Superior    : 4
+f(xu)              : 2.61371
+Newton             : 3.0571
+|f(Newton)|        : 1.20266e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 3.0571
+ans =  3.0571
+
+e. e^x ? 3*x^2 = 0 para 0 = x = l e 3 = x = 5 [0, 1.0] e [3.0, 5.0]
+f'(x) = -6*x + e^(x)
+[0, 1.0]
+ ----- iteracao 3 -----
+Limite Inferiro    : 0
+f(xl)              : 1
+Limite Superior    : 1
+f(xu)              : -0.281718
+Newton             : 0.910008
+|f(Newton)|        : 1.45596e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 0.910008
+ans =  0.91001
+
+[3.0, 5.0]
+ ----- iteracao 6 -----
+Limite Inferiro    : 3
+f(xl)              : -6.91446
+Limite Superior    : 5
+f(xu)              : 73.4132
+Newton             : 3.73308
+|f(Newton)|        : 1.48938e-009
+Tolerancia         : 1e-005
+A RAIZ eh : 3.73308
+ans =  3.7331
+
+f. sin(x) ? e^(?x) = 0 para 0 = x = l, 3 = x = 4 e 6 = x = 7 [0, 1.0], [3.0, 4.0] e [6.0, 7.0]
+f'(x) = cos(x) + e^(-x)
+[0, 1.0]
+ ----- iteracao 2 -----
+Limite Inferiro    : 0
+f(xl)              : -1
+Limite Superior    : 1
+f(xu)              : 0.473592
+Newton             : 0.588528
+|f(Newton)|        : 6.99498e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 0.588528
+ans =  0.58853
+
+[3.0, 4.0]
+ ----- iteracao 1 -----
+Limite Inferiro    : 3
+f(xl)              : 0.0913329
+Limite Superior    : 4
+f(xu)              : -0.775118
+Newton             : 3.09637
+|f(Newton)|        : 3.4397e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 3.09637
+ans =  3.0964
+
+[6.0, 7.0]
+ ----- iteracao 1 -----
+Limite Inferiro    : 6
+f(xl)              : -0.281894
+Limite Superior    : 7
+f(xu)              : 0.656075
+Newton             : 6.28505
+|f(Newton)|        : 1.68337e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 6.28505
+ans =  6.2850
+
+Questão 8: Repita o Exercício 6, utilizando o método da secante.
+a. e^(x) + 2^(-x) + 2*cos(x) ? 6 = 0 para 1 = x = 2 [1.0, 2.0]
+
+----- iteracao 5 -----
+Limite Inferiro    : 1.8323
+f(xl)              : 0.0119846
+Limite Superior    : 1.82933
+f(xu)              : -0.000215028
+Secante            : 1.82938
+|f(Secante)|       : 5.24785e-007
+Tolerancia         : 1e-005
+A RAIZ eh : 1.82938
+ans =  1.8294
+
+
+b. log(x?1) + cos(x?1) = 0 para 1,3 = x = 2 [1.3, 2.0] // log = ln
+ ----- iteracao 7 -----
+Limite Inferiro    : 1.39683
+f(xl)              : -0.00194952
+Limite Superior    : 1.39777
+f(xu)              : 4.365e-005
+Secante            : 1.39775
+|f(Secante)|       : 6.80126e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 1.39775
+ans =  1.3977
+
+c. 2*x*cos(2*x) ? (x?2)^2 = 0 para 2 = x = 3 e 3 = x = 4 [2.0, 3.0] e [3.0, 4.0]
+[2.0, 3.0]
+ ----- iteracao 4 -----
+Limite Inferiro    : 2.37315
+f(xl)              : 0.0216694
+Limite Superior    : 2.37067
+f(xu)              : -0.000112597
+Secante            : 2.37069
+|f(Secante)|       : 8.52742e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 2.37069
+ans =  2.3707
+
+[3.0, 4.0]
+ ----- iteracao 6 -----
+Limite Inferiro    : 3.72183
+f(xl)              : 0.00454728
+Limite Superior    : 3.72211
+f(xu)              : 2.86293e-005
+Secante            : 3.72211
+|f(Secante)|       : 5.19474e-009
+Tolerancia         : 1e-005
+A RAIZ eh : 3.72211
+ans =  3.7221
+
+d. (x?2)^2 ? log(x) = 0 para 1 = x = 2 e e = x = 4 [1.0, 2.0] e [2.7183, 4.0] // log = ln(
+[1.0, 2.0]
+ ----- iteracao 6 -----
+Limite Inferiro    : 1.41363
+f(xl)              : -0.00233981
+Limite Superior    : 1.41238
+f(xu)              : 2.44559e-005
+Secante            : 1.41239
+|f(Secante)|       : 2.02092e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 1.41239
+ans =  1.4124
+
+[2.7183, 4.0]
+ ----- iteracao 5 -----
+Limite Inferiro    : 3.0619
+f(xl)              : 0.00859397
+Limite Superior    : 3.05695
+f(xu)              : -0.000270346
+Secante            : 3.0571
+|f(Secante)|       : 7.62174e-007
+Tolerancia         : 1e-005
+A RAIZ eh : 3.0571
+ans =  3.0571
+
+e. e^x ? 3*x^2 = 0 para 0 = x = l e 3 = x = 5 [0, 1.0] e [3.0, 5.0]
+[0, 1.0]
+ ----- iteracao 4 -----
+Limite Inferiro    : 0.902867
+f(xl)              : 0.0211592
+Limite Superior    : 0.910624
+f(xu)              : -0.0018336
+Secante            : 0.910005
+|f(Secante)|       : 7.7737e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 0.910005
+ans =  0.91000
+
+[3.0, 5.0]
+ ----- iteracao 9 -----
+Limite Inferiro    : 3.73252
+f(xl)              : -0.0108821
+Limite Superior    : 3.73307
+f(xu)              : -0.000100782
+Secante            : 3.73308
+|f(Secante)|       : 5.21657e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 3.73308
+ans =  3.7331
+
+
+f. sin(x) ? e^(?x) = 0 para 0 = x = l, 3 = x = 4 e 6 = x = 7 [0, 1.0], [3.0, 4.0] e [6.0, 7.0]
+[0, 1.0]
+ ----- iteracao 4 -----
+Limite Inferiro    : 0.569062
+f(xl)              : -0.0272137
+Limite Superior    : 0.58926
+f(xu)              : 0.0010078
+Secante            : 0.588538
+|f(Secante)|       : 7.78607e-006
+Tolerancia         : 1e-005
+A RAIZ eh : 0.588538
+ans =  0.58854
+
+[3.0, 4.0]
+ ----- iteracao 3 -----
+Limite Inferiro    : 3.10541
+f(xl)              : -0.00863175
+Limite Superior    : 3.09534
+f(xu)              : 0.000980354
+Secante            : 3.09636
+|f(Secante)|       : 4.07317e-007
+Tolerancia         : 1e-005
+A RAIZ eh : 3.09636
+ans =  3.0964
+
+[6.0, 7.0]
+ ----- iteracao 3 -----
+Limite Inferiro    : 6.30054
+f(xl)              : 0.0155154
+Limite Superior    : 6.28359
+f(xu)              : -0.00145723
+Secante            : 6.28505
+|f(Secante)|       : 9.45837e-008
+Tolerancia         : 1e-005
+A RAIZ eh : 6.28505
+ans =  6.2850
+ 
+
+Cap 2.5 
+
+Questão 1:
+A. P0 = 0.5 e Steffesen: (2 - e^x + x^2)/3
+ ----- Termos da Sequencia -----
+   0.50000   0.20043   0.27275   0.25361   0.25855   0.25727   0.25760   0.25751
+
+ ----- Sequencia de Aikten -----
+   0.25868   0.25761   0.25754   0.25753   0.25753   0.25753
+
+B. P0 = 0.75 e Steffesen: ((e^x)/3)^0.5
+ ----- Termos da Sequencia -----
+   0.75000   0.84004   0.87872   0.89588   0.90360   0.90710   0.90868   0.90941
+
+ ----- Sequencia de Aikten -----
+   0.90786   0.90957   0.90992   0.90999   0.91000   0.91001
+
+
+C. P0 = 0.5 e Steffesen: 3^-x
+ ----- Termos da Sequencia -----
+   0.50000   0.57735   0.53032   0.55844   0.54145   0.55165   0.54550   0.54920
+
+ ----- Sequencia de Aikten -----
+   0.54810   0.54792   0.54785   0.54782   0.54781   0.54781
+
+D. P0 = 0.5 e Steffesen: cos(x)
+ ----- Termos da Sequencia -----
+   0.50000   0.87758   0.63901   0.80269   0.69478   0.76820   0.71917   0.75236
+
+ ----- Sequencia de Aikten -----
+   0.73139   0.73609   0.73765   0.73847   0.73880   0.73896
+   
+
+Questão 2: Considere a função f(x)= e^6x + 3(ln2)^2*e^2x - (ln8)e^4x - (ln2)^3.
+Utilize o método de Newton com p0 = 0 para obter uma aproximação de um zero de f.
+Gere termos até que |pn+1 - pn|< 0,0002.
+Obtenha a sequência ?2 de Aitken . Houve melhora na convergência?
+
+f(x)= e^(6*x) + 3*(log(2))^2*e^(2*x) - (log(8))*e^(4*x) - (log(2))^3
+f´(x)= 6*e^(6*x) + 6*(log(2)^2)*e^(2*x) - 12*(log(2))*e^(4*x)
+
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0
+Erro Absoluto      : 0.0288928
+Tolerancia         : 0.0001
+    0.00000    0.00000    0.02889
+    1.00000   -0.05114    0.05114
+    2.00000   -0.08984    0.03870
+    3.00000   -0.11824    0.02840
+    4.00000   -0.13857    0.02032
+    5.00000   -0.15282    0.01425
+    6.00000   -0.16266    0.00984
+    7.00000   -0.16939    0.00673
+    8.00000   -0.17395    0.00456
+    9.00000   -0.17702    0.00307
+   10.00000   -0.17909    0.00207
+   11.00000   -0.18047    0.00138
+   12.00000   -0.18140    0.00093
+   13.00000   -0.18202    0.00062
+   14.00000   -0.18243    0.00041
+   15.00000   -0.18270    0.00028
+   16.00000   -0.18289    0.00018
+   17.00000   -0.18301    0.00012
+   18.00000   -0.18309    0.00008
+
+ ----- Calcular os Tersmos de Aikten usando as raizes de Newton -----
+   1.000000000  -0.210220281   0.210220281
+   2.000000000  -0.196578606   0.013641675
+   3.000000000  -0.189662847   0.006915759
+   4.000000000  -0.186271009   0.003391838
+   5.000000000  -0.184651557   0.001619451
+   6.000000000  -0.183894213   0.000757345
+   7.000000000  -0.183545445   0.000348767
+   8.000000000  -0.183386602   0.000158843
+   9.000000000  -0.183314819   0.000071783 
+
+Sim, a convergencia de Aikiten é mais rápida e precisa que a de Newton.
+
+Cap 2.6 (método de Horner e Muller)
+dicas:
+1. Criar os intervalos no Excel
+2. Identificar o interva-lo onde acontece a mudança do sinal das reaízes (y)
+3. Calcular a derivada usando:
+syms (x)
+ff= função
+fd=diff(ff)
+
+Questão 1: Determine aproximações com precisão de 0.0001, de todos os zeros dos polinômios a seguir, utilizando o método de Newton
+a) f(x) = (x)^3 - 2*(x)^2 - 5
+   f´(x) = 3*x^2  - 4*x
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 5.375
+Tolerancia         : 0.0001
+    0.00000    0.50000    5.37500
+    1.00000   -3.80000    4.30000
+    2.00000   -2.28339    1.51661
+    3.00000   -1.18015    1.10324
+    4.00000   -0.12055    1.05959
+    5.00000    9.44712    9.56768
+    6.00000    6.57856    2.86856
+    7.00000    4.71272    1.86584
+    8.00000    3.55636    1.15636
+    9.00000    2.93723    0.61913
+   10.00000    2.71889    0.21834
+   11.00000    2.69108    0.02781
+   12.00000    2.69065    0.00043
+   13.00000    2.69065    0.00000
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   -3.80000 +  0.00000i   -2.28339 +  0.00000i   -0.59696 +  0.00000i   -5.92545 +  0.00000i
+   -2.28339 +  0.00000i   -1.18015 +  0.00000i   -0.85584 +  0.95535i   -2.92301 +  4.49783i
+   -1.18015 +  0.00000i   -0.12055 +  0.00000i   -0.27867 +  0.93590i   -2.69284 +  0.44152i
+   -0.12055 +  0.00000i    9.44712 +  0.00000i    0.26537 +  0.00000i   -5.12216 +  0.00000i
+    9.44712 +  0.00000i    6.57856 +  0.00000i    4.52889 +  0.00000i   46.86988 +  0.00000i
+    6.57856 +  0.00000i    4.71272 +  0.00000i    3.67355 -  1.36695i    0.72897 - 32.70052i
+    4.71272 +  0.00000i    3.55636 +  0.00000i    2.76933 -  0.72357i   -2.40239 -  8.25356i
+    3.55636 +  0.00000i    2.93723 +  0.00000i    2.63667 +  0.00000i   -0.57387 +  0.00000i
+    2.93723 +  0.00000i    2.71889 +  0.00000i    2.69008 +  0.00000i   -0.00617 +  0.00000i
+    2.71889 +  0.00000i    2.69108 +  0.00000i    2.69065 +  0.00000i   -0.00000 +  0.00000i
+    2.69108 +  0.00000i    2.69065 +  0.00000i    2.69065 +  0.00000i   -0.00000 +  0.00000i
+A RAIZ eh : 2.69065
+
+b) f(x) = (x)^3 + 3*(x)^2 -1
+   f´(x) = 3*x^2  + 6*x
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 0.125
+Tolerancia         : 0.0001
+   0.00000   0.50000   0.12500
+   1.00000   0.53333   0.03333
+   2.00000   0.53209   0.00124
+   3.00000   0.53209   0.00000
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   0.533333333333333   0.532090643274854   0.532088886255315   0.000000000070163
+A RAIZ eh : 0.532089
+ans =  0.53209
+
+
+c) f(x) = (x)^3 - (x) - 1
+   f´(x) = 3*x^2  - 1
+
+                                                                                                     
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 1.375
+Tolerancia         : 0.0001
+    0.00000    0.50000    1.37500
+    1.00000   -5.00000    5.50000
+    2.00000   -3.36486    1.63514
+    3.00000   -2.28096    1.08391
+    4.00000   -1.55628    0.72468
+    5.00000   -1.04351    0.51277
+    6.00000   -0.56141    0.48210
+    7.00000  -11.86434   11.30294
+    8.00000   -7.92596    3.93838
+    9.00000   -5.30683    2.61914
+   10.00000   -3.56828    1.73854
+   11.00000   -2.41592    1.15236
+   12.00000   -1.64760    0.76832
+   13.00000   -1.11217    0.53543
+   14.00000   -0.64607    0.46610
+   15.00000    1.82632    2.47240
+   16.00000    1.46377    0.36255
+   17.00000    1.33987    0.12390
+   18.00000    1.32493    0.01494
+   19.00000    1.32472    0.00021
+   20.00000    1.32472    0.00000
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   -5.00000 +  0.00000i   -3.36486 +  0.00000i   -2.16903 +  0.00000i   -9.03563 +  0.00000i
+   -3.36486 +  0.00000i   -2.28096 +  0.00000i   -1.73327 +  0.83334i   -0.86286 +  6.09857i
+   -2.28096 +  0.00000i   -1.55628 +  0.00000i   -1.21226 +  0.57251i   -0.37720 +  1.76387i
+   -1.55628 +  0.00000i   -1.04351 +  0.00000i   -0.87630 +  0.44265i   -0.28151 +  0.49035i
+   -1.04351 +  0.00000i   -0.56141 +  0.00000i   -0.64588 +  0.43311i   -0.26009 +  0.02768i
+   -0.56141 +  0.00000i  -11.86434 +  0.00000i   -0.76571 +  0.06293i   -0.67414 +  0.04751i
+  -11.86434 +  0.00000i   -7.92596 +  0.00000i   -4.64681 +  0.00000i  -96.69089 +  0.00000i
+   -7.92596 +  0.00000i   -5.30683 +  0.00000i   -3.98572 +  2.00949i  -12.04760 + 85.64394i
+   -5.30683 +  0.00000i   -3.56828 +  0.00000i   -2.68674 +  1.33200i   -3.40699 + 25.15004i
+   -3.56828 +  0.00000i   -2.41592 +  0.00000i   -1.83233 +  0.88481i   -1.01610 +  7.33457i
+   -2.41592 +  0.00000i   -1.64760 +  0.00000i   -1.27626 +  0.60273i   -0.41160 +  2.12356i
+   -1.64760 +  0.00000i   -1.11217 +  0.00000i   -0.91773 +  0.45422i   -0.28718 +  0.59975i
+   -1.11217 +  0.00000i   -0.64607 +  0.00000i   -0.67757 +  0.42674i   -0.26333 +  0.08331i
+   -0.64607 +  0.00000i    1.82632 +  0.00000i   -0.21127 +  0.00000i   -0.79816 +  0.00000i
+    1.82632 +  0.00000i    1.46377 +  0.00000i    1.34961 +  0.00000i    0.10861 +  0.00000i
+    1.46377 +  0.00000i    1.33987 +  0.00000i    1.32447 +  0.00000i   -0.00108 +  0.00000i
+    1.33987 +  0.00000i    1.32493 +  0.00000i    1.32472 +  0.00000i   -0.00000 +  0.00000i
+    1.32493 +  0.00000i    1.32472 +  0.00000i    1.32472 +  0.00000i   -0.00000 +  0.00000i
+
+A RAIZ eh : 1.32472
+ans =  1.3247
+
+
+d) f(x) = (x)^4 + 2*(x)^2 - (x) - 3
+   f´(x) = 4*x^3  + 4*x - 1
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 2.9375
+Tolerancia         : 0.0001
+   0.00000   0.50000   2.93750
+   1.00000   2.45833   1.95833
+   2.00000   1.82618   0.63216
+   3.00000   1.40337   0.42280
+   4.00000   1.18547   0.21790
+   5.00000   1.12779   0.05768
+   6.00000   1.12414   0.00366
+   7.00000   1.12412   0.00001
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   2.45833 + 0.00000i   1.82618 + 0.00000i   1.35715 + 0.00000i   2.71895 + 0.00000i
+   1.82618 + 0.00000i   1.40337 + 0.00000i   1.14119 - 0.27280i  -0.56532 - 2.50150i
+   1.40337 + 0.00000i   1.18547 + 0.00000i   1.11540 + 0.00000i  -0.07932 + 0.00000i
+   1.18547 + 0.00000i   1.12779 + 0.00000i   1.12409 + 0.00000i  -0.00031 + 0.00000i
+   1.12779 + 0.00000i   1.12414 + 0.00000i   1.12412 + 0.00000i  -0.00000 + 0.00000i
+A RAIZ eh : 1.12412
+ans =  1.1241
+
+e) f(x) = (x)^3 + 4.001*(x)^2 + 4.002*(x) + 1.101
+   f´(x) = 3*x^2 + 8.002*x + 4.002
+                                                                                                     
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 4.22725
+Tolerancia         : 0.0001
+   0.00000   0.50000   4.22725
+   1.00000   0.01705   0.48295
+   2.00000  -0.26570   0.28275
+   3.00000  -0.41006   0.14436
+   4.00000  -0.46210   0.05204
+   5.00000  -0.46989   0.00779
+   6.00000  -0.47006   0.00018
+   7.00000  -0.47006   0.00000
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+    0.01705 + 0.00000i  -0.26570 + 0.00000i  -0.48571 - 0.14988i  -0.07065 - 0.12000i
+   -0.26570 + 0.00000i  -0.41006 + 0.00000i  -0.47819 + 0.00000i  -0.00717 + 0.00000i
+   -0.41006 + 0.00000i  -0.46210 + 0.00000i  -0.47017 + 0.00000i  -0.00010 + 0.00000i
+   -0.46210 + 0.00000i  -0.46989 + 0.00000i  -0.47006 + 0.00000i  -0.00000 + 0.00000i
+   -0.46989 + 0.00000i  -0.47006 + 0.00000i  -0.47006 + 0.00000i  -0.00000 + 0.00000i
+ 
+ A RAIZ eh : -0.470064
+ans = -0.47006
+
+f) f(x) = (x)^5 - (x)^4 + 2*(x)^3 - 3*(x)^2 + (x) - 4
+   f´(x) = 5*x^4  - 4*x^3  + 6*x^2  - 6*x + 1
+
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 0.5
+Erro Absoluto      : 4.03125
+Tolerancia         : 0.0001
+    0.00000    0.50000    4.03125
+    1.00000   -5.36364    5.86364
+    2.00000   -4.22055    1.14308
+    3.00000   -3.29575    0.92481
+    4.00000   -2.54085    0.75490
+    5.00000   -1.91379    0.62705
+    6.00000   -1.37348    0.54031
+    7.00000   -0.86726    0.50622
+    8.00000   -0.28014    0.58713
+    9.00000    1.11646    1.39659
+   10.00000    2.03525    0.91879
+   11.00000    1.72735    0.30790
+   12.00000    1.55595    0.17140
+   13.00000    1.50282    0.05313
+   14.00000    1.49822    0.00460
+   15.00000    1.49819    0.00003
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+ 
+  Columns 1 through 3:
+ 
+     -5.36364 +   0.00000i    -4.22055 +   0.00000i    -3.42848 +   0.00000i
+     -4.22055 +   0.00000i    -3.29575 +   0.00000i    -3.05029 +   0.76632i
+     -3.29575 +   0.00000i    -2.54085 +   0.00000i    -2.34968 +   0.62714i
+     -2.54085 +   0.00000i    -1.91379 +   0.00000i    -1.77006 +   0.52337i
+     -1.91379 +   0.00000i    -1.37348 +   0.00000i    -1.27646 +   0.45428i
+     -1.37348 +   0.00000i    -0.86726 +   0.00000i    -0.82957 +   0.42729i
+     -0.86726 +   0.00000i    -0.28014 +   0.00000i    -0.36179 +   0.47378i
+     -0.28014 +   0.00000i     1.11646 +   0.00000i     0.50171 +   0.74945i
+      1.11646 +   0.00000i     2.03525 +   0.00000i     1.31804 +   0.00000i
+      2.03525 +   0.00000i     1.72735 +   0.00000i     1.54340 +   0.00000i
+      1.72735 +   0.00000i     1.55595 +   0.00000i     1.48445 +   0.00000i
+      1.55595 +   0.00000i     1.50282 +   0.00000i     1.49812 +   0.00000i
+      1.50282 +   0.00000i     1.49822 +   0.00000i     1.49819 +   0.00000i
+ 
+  Column 4:
+ 
+   -735.16381 +   0.00000i
+   -236.00128 + 428.26588i
+    -82.15632 + 142.03419i
+    -30.12122 +  47.46450i
+    -12.17280 +  16.00961i
+     -5.82132 +   5.36848i
+     -3.57079 +   1.52271i
+     -3.42329 -   1.33614i
+     -2.35430 +   0.00000i
+      0.83354 +   0.00000i
+     -0.23160 +   0.00000i
+     -0.00127 +   0.00000i
+     -0.00000 +   0.00000i
+ A RAIZ eh : 1.49819
+ans =  1.4982
+
+Questão 2:
+a) x^4 + 5*x^3 - 9*x^2 - 85*x - 136
+   4*x^3 + 15*x^2 - 18*x - 85
+
+>> mullernewton(4.0, 4.2, 0.0001, 1000)
+entre com a funcao: x^4 + 5*x^3 - 9*x^2 - 85*x - 136
+entre com a funcao derivada: 4*x^3 + 15*x^2 - 18*x - 85
+
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 4
+Erro Absoluto      : 44
+Tolerancia         : 0.0001
+    0.00000    4.00000   44.00000
+    1.00000    4.12979    0.12979
+    2.00000    4.12312    0.00667
+    3.00000    4.12311    0.00002
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   4.12979351032   4.12312397113   4.12310562648   0.00000032285
+A RAIZ eh : 4.12311
+ans =  4.1231
+
+b) x^4 - 2*x^3 - 12*x^2 + 16*x - 40
+   4*x^3 - 6*x^2 - 24*x + 16
+>> mullernewton(4.2, 4.4, 0.0001, 1000)
+entre com a funcao: x^4 - 2*x^3 - 12*x^2 + 16*x - 40
+entre com a funcao derivada: 4*x^3 - 6*x^2 - 24*x + 16
+
+ ----- Calcular a Raiz aproximanda de Newton -----
+P(0)              : 4.2
+Erro Absoluto      : 21.4864
+Tolerancia         : 0.0001
+    0.00000    4.20000   21.48640
+    1.00000    4.40325    0.20325
+    2.00000    4.38139    0.02186
+    3.00000    4.38111    0.00028
+    4.00000    4.38111    0.00000
+
+ ----- Calcular os Tersmos de Muller usando as raizes de Newton -----
+   4.403254124   4.381394098   4.381113572   0.000017285
+A RAIZ eh : 4.38111
+ans =  4.3811
+
+c) x^4 + x^3 + 3*x^2 + 2*x + 2
+   4*x^3 + 3*x^2 + 6*x + 2
+   
+d) x^5 + 11*x^4 - 21*x^3 - 10*x^2 - 21*x - 5
+   5*x^4 + 44*x^3 - 63*x^2 - 20*x - 21
+    
+e) 16*x^4 + 88*x^3 + 159*x^2 + 76*x - 240
+   64*x^3 + 264*x^2 + 318*x + 76
+
+f) x^4 - 4*x^2 - 3*x + 5
+   4*x^3 - 8*x - 3
+
+g) x^4 - 2*x^3 - 4*x^2 + 4*x + 4
+   4*x^3 - 6*x^2 - 8*x + 4
+
+h) x^3 - 7*x^2 + 14*x - 6
+   3*x^2 - 14*x + 14
+
+
+Cap 3.1
+
+Questão 5:
+
+
+Questão 6:
+
+Questão 28:
+a. A introdução deste capítulo inclui uma tabela que mostra a população dos Estados Unidos de 1960 até 2010.
+Use a interpolação de Lagrange para aproximar a população nos anos de 1950, 1975, 2014 e 2020.
+
+1950
+ ----- Resultados do Lagrange -----
+O Valor de Lagrange para o ponto [1950] eh : [192539]
+O Polinomio de Lagrange para o ponto [1950] eh :
+0+ (179323*(((x -1970)/(1960 -1970)))*(((x -1980)/(1960 -1980)))*(((x -1990)/(1960 -1990)))*(((x -2000)/(1960 -2000)))*(((x -2010)/(1960 -2010))))+ (203302*(((x -1960)/(1970 -1960)))*(((x -1980)/(1970 -1980)))*(((x -1990)/(1970 -1990)))*(((x -2000)/(1970 -2000)))*(((x -2010)/(1970 -2010))))+ (226542*(((x -1960)/(1980 -1960)))*(((x -1970)/(1980 -1970)))*(((x -1990)/(1980 -1990)))*(((x -2000)/(1980 -2000)))*(((x -2010)/(1980 -2010))))+ (249633*(((x -1960)/(1990 -1960)))*(((x -1970)/(1990 -1970)))*(((x -1980)/(1990 -1980)))*(((x -2000)/(1990 -2000)))*(((x -2010)/(1990 -2010))))+ (281422*(((x -1960)/(2000 -1960)))*(((x -1970)/(2000 -1970)))*(((x -1980)/(2000 -1980)))*(((x -1990)/(2000 -1990)))*(((x -2010)/(2000 -2010))))+ (308746*(((x -1960)/(2010 -1960)))*(((x -1970)/(2010 -1970)))*(((x -1980)/(2010 -1980)))*(((x -1990)/(2010 -1990)))*(((x -2000)/(2010 -2000))))
+
+ans =  192539
+
+1975
+ ----- Resultados do Lagrange -----
+O Valor de Lagrange para o ponto [1975] eh : [215526]
+O Polinomio de Lagrange para o ponto [1975] eh :
+0+ (179323*(((x -1970)/(1960 -1970)))*(((x -1980)/(1960 -1980)))*(((x -1990)/(1960 -1990)))*(((x -2000)/(1960 -2000)))*(((x -2010)/(1960 -2010))))+ (203302*(((x -1960)/(1970 -1960)))*(((x -1980)/(1970 -1980)))*(((x -1990)/(1970 -1990)))*(((x -2000)/(1970 -2000)))*(((x -2010)/(1970 -2010))))+ (226542*(((x -1960)/(1980 -1960)))*(((x -1970)/(1980 -1970)))*(((x -1990)/(1980 -1990)))*(((x -2000)/(1980 -2000)))*(((x -2010)/(1980 -2010))))+ (249633*(((x -1960)/(1990 -1960)))*(((x -1970)/(1990 -1970)))*(((x -1980)/(1990 -1980)))*(((x -2000)/(1990 -2000)))*(((x -2010)/(1990 -2010))))+ (281422*(((x -1960)/(2000 -1960)))*(((x -1970)/(2000 -1970)))*(((x -1980)/(2000 -1980)))*(((x -1990)/(2000 -1990)))*(((x -2010)/(2000 -2010))))+ (308746*(((x -1960)/(2010 -1960)))*(((x -1970)/(2010 -1970)))*(((x -1980)/(2010 -1980)))*(((x -1990)/(2010 -1990)))*(((x -2000)/(2010 -2000))))
+
+ans =  215525.71484
+
+2014
+ ----- Resultados do Lagrange -----
+O Valor de Lagrange para o ponto [2014] eh : [306215]
+O Polinomio de Lagrange para o ponto [1975] eh :
+0+ (179323*(((x -1970)/(1960 -1970)))*(((x -1980)/(1960 -1980)))*(((x -1990)/(1960 -1990)))*(((x -2000)/(1960 -2000)))*(((x -2010)/(1960 -2010))))+ (203302*(((x -1960)/(1970 -1960)))*(((x -1980)/(1970 -1980)))*(((x -1990)/(1970 -1990)))*(((x -2000)/(1970 -2000)))*(((x -2010)/(1970 -2010))))+ (226542*(((x -1960)/(1980 -1960)))*(((x -1970)/(1980 -1970)))*(((x -1990)/(1980 -1990)))*(((x -2000)/(1980 -2000)))*(((x -2010)/(1980 -2010))))+ (249633*(((x -1960)/(1990 -1960)))*(((x -1970)/(1990 -1970)))*(((x -1980)/(1990 -1980)))*(((x -2000)/(1990 -2000)))*(((x -2010)/(1990 -2010))))+ (281422*(((x -1960)/(2000 -1960)))*(((x -1970)/(2000 -1970)))*(((x -1980)/(2000 -1980)))*(((x -1990)/(2000 -1990)))*(((x -2010)/(2000 -2010))))+ (308746*(((x -1960)/(2010 -1960)))*(((x -1970)/(2010 -1970)))*(((x -1980)/(2010 -1980)))*(((x -1990)/(2010 -1990)))*(((x -2000)/(2010 -2000))))
+
+ans =  306214.88762
+
+2020
+O Valor de Lagrange para o ponto [2020] eh : [266165]
+O Polinomio de Lagrange para o ponto [2020] eh : [0+ (179323*(((x -1970)/(1960 -1970)))*(((x -1980)/(
+0+ (179323*(((x -1970)/(1960 -1970)))*(((x -1980)/(1960 -1980)))*(((x -1990)/(1960 -1990)))*(((x -2000)/(1960 -2000)))*(((x -2010)/(1960 -2010))))+ (203302*(((x -1960)/(1970 -1960)))*(((x -1980)/(1970 -1980)))*(((x -1990)/(1970 -1990)))*(((x -2000)/(1970 -2000)))*(((x -2010)/(1970 -2010))))+ (226542*(((x -1960)/(1980 -1960)))*(((x -1970)/(1980 -1970)))*(((x -1990)/(1980 -1990)))*(((x -2000)/(1980 -2000)))*(((x -2010)/(1980 -2010))))+ (249633*(((x -1960)/(1990 -1960)))*(((x -1970)/(1990 -1970)))*(((x -1980)/(1990 -1980)))*(((x -2000)/(1990 -2000)))*(((x -2010)/(1990 -2010))))+ (281422*(((x -1960)/(2000 -1960)))*(((x -1970)/(2000 -1970)))*(((x -1980)/(2000 -1980)))*(((x -1990)/(2000 -1990)))*(((x -2010)/(2000 -2010))))+ (308746*(((x -1960)/(2010 -1960)))*(((x -1970)/(2010 -1970)))*(((x -1980)/(2010 -1980)))*(((x -1990)/(2010 -1990)))*(((x -2000)/(2010 -2000))))
+
+ans =  266165
+
+b. A população em 1950 era aproximadamente 150.697.360 e, em 2014, a estimativa da população era 317.298.000.
+Quão precisos você acha que seus valores para 1975 e 2020 são?
+
+ 
+
+Cap 3.2
+
+Questão 1: Use o método de Neville para obter aproximações para os polinômios interpoladores de Lagrange de graus um. dois e três e aproximar o seguinte:
+
+a) f(8,4) se f(8,1) = 16,94410, f(8,3) = 17,56492, f(8,6) = 18,50515, f(8,7) = 18,82091
+ ----- Matriz de Neville -----
+   16.94410   17.87533   17.87713   17.87714
+   17.56492   17.87833   17.87716    0.00000
+   18.50515   17.87363    0.00000    0.00000
+   18.82091    0.00000    0.00000    0.00000
+
+ ----- Resultados de Neville -----
+O Valor de Neville para o ponto [8.4] eh : [17.87714]
+ans =  17.87714
+
+b) f(-1/3) se f(-0,75) = -0,07181250, f(-0,5) = -0,02475000, f(-0,25) = 0,33493750, f(0) = 1,10100000
+ ----- Matriz de Neville -----
+  -0.07181   0.00663   0.18031   0.17452
+  -0.02475   0.21504   0.16989   0.00000
+   0.33494   0.07958   0.00000   0.00000
+   1.10100   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [-0.333333] eh : [0.174519]
+ans =  0.17452
+
+c) f(0,25) se f(0,1) = 0,62049958, f(0,2) = -0,28398668, f(0,3) = 0,00660095, f(0,4) = 0,24842440
+ ----- Matriz de Neville -----
+   0.62050  -0.73623  -0.28808  -0.21034
+  -0.28399  -0.13869  -0.13260   0.00000
+   0.00660  -0.11431   0.00000   0.00000
+   0.24842   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0.25] eh : [-0.210337]
+ans = -0.21034
+
+d) f(0,9) se f(0,6) = -0,17694460, f(0,7) = 0,01375227, f(0,8) = 0,22363362, f(1,0) = 0,65809197
+ ----- Matriz de Neville -----
+  -0.17694   0.39515   0.45270   0.44199
+   0.01375   0.43351   0.43841   0.00000
+   0.22363   0.44086   0.00000   0.00000
+   0.65809   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0.9] eh : [0.441985]
+ans =  0.44199
+
+Questão 2: Use o método de Neville para obter aproximações para os polinômios interpoladores de Lagrange de graus um, dois e três e aproximar o seguinte
+a) f(0,43) se f(0) = 1, f(0,25) = 1,64872, f(0,5) = 2,71828, f(0,75) = 4,48169
+ ----- Matriz de Neville -----
+   1.00000   2.11580   2.37638   2.36060
+   1.64872   2.41880   2.34886   0.00000
+   2.71828   2.22453   0.00000   0.00000
+   4.48169   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0.43] eh : [2.3606]
+ans =  2.3606
+
+b) f(0) se f(-0,5) = 1,93750, f(-0,25) = 1,33203, f(0,25) = 0,800781, f(0,5) = 0,687500
+ ----- Matriz de Neville -----
+   1.93750   0.72656   0.95312   0.98437
+   1.33203   1.06641   1.01562   0.00000
+   0.80078   0.91406   0.00000   0.00000
+   0.68750   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0] eh : [0.984374]
+ans =  0.98437
+
+c) f(0,18) se f(0,1) = -0.29004986, f(0,2) = -0,56079734, f(0,3) = -0,81401972, f(0,4) = -1,0526302
+ ----- Matriz de Neville -----
+  -0.29005  -0.50665  -0.50805  -0.50814
+  -0.56080  -0.51015  -0.50840   0.00000
+  -0.81402  -0.52769   0.00000   0.00000
+  -1.05263   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0.18] eh : [-0.508143]
+ans = -0.50814
+
+d) f(0,25) se f(-1) = 0,86199480, f(-0,5) = 0,95802009, f(0) = 1,0986123, f(0,5) = 1,2943767
+ ----- Matriz de Neville -----
+   0.86199   1.10206   1.18562   1.18894
+   0.95802   1.16891   1.18960   0.00000
+   1.09861   1.19649   0.00000   0.00000
+   1.29438   0.00000   0.00000   0.00000
+
+ -- Resultados de Neville (graus: 1, 1, 2, ...n(-1) --
+O Valor de Neville para o ponto [0.25] eh : [1.18894]
+ans =  1.1889
+
+Questão 8:
+Use o algoritmo 3.2 para construir o polinomo interpolador de grau 4 para os pontos espaçados de forma desigual fornecidos na tabela a seguir
+
+x[ 0 0.1 0.3 0.6 1.0]
+y[-6 -5.894883 -5.65014 -5.17788 -4.28172]
+
+ ----- Resultados do Lagrange -----
+O Valor de Lagrange para o ponto [1] eh : [-4.28172]
+O Polinomio de Lagrange para o ponto [1] eh :
+0+ (-6*(((x -0.1)/(0 -0.1)))*(((x -0.3)/(0 -0.3)))*(((x -0.6)/(0 -0.6)))*(((x -1)/(0 -1))))+ (-5.8949*(((x -0)/(0.1 -0)))*(((x -0.3)/(0.1 -0.3)))*(((x -0.6)/(0.1 -0.6)))*(((x -1)/(0.1 -1))))+ (-5.6501*(((x -0)/(0.3 -0)))*(((x -0.1)/(0.3 -0.1)))*(((x -0.6)/(0.3 -0.6)))*(((x -1)/(0.3 -1))))+ (-5.1779*(((x -0)/(0.6 -0)))*(((x -0.1)/(0.6 -0.1)))*(((x -0.3)/(0.6 -0.3)))*(((x -1)/(0.6 -1))))+ (-4.2817*(((x -0)/(1 -0)))*(((x -0.1)/(1 -0.1)))*(((x -0.3)/(1 -0.3)))*(((x -0.6)/(1 -0.6))))
+
+                 4                4                 3                3                2                 2
+    36929367250*x    42839000*pi*x    232612300*pi*x    22284485750*x    71082434515*x    123757360*pi*x    6554020*pi*x   3797714387*x
+  - -------------- + -------------- - --------------- + -------------- - -------------- + --------------- - ------------ + ------------ - 6
+       46234251          168477            505431          15411417         92468502           505431          168477        30822834 
+
+
+ ----- Matriz de Neville -----
+  -6.00000  -4.94883  -4.43120  -4.29908  -4.28172
+  -5.89488  -4.79354  -4.35193  -4.28172   0.00000
+  -5.65014  -4.54820  -4.28172   0.00000   0.00000
+  -5.17788  -4.28172   0.00000   0.00000   0.00000
+  -4.28172   0.00000   0.00000   0.00000   0.00000
+
+ ----- Resultados de Neville -----
+O Valor de Neville para o ponto [1] eh : [-4.28172]
+
+ ----- Matriz das Diferencas Dividas -----
+  -6.00000   1.05117   0.57515   0.20970   0.06890
+  -5.89488   1.22371   0.70097   0.27860   0.00000
+  -5.65014   1.57420   0.95171   0.00000   0.00000
+  -5.17788   2.24040   0.00000   0.00000   0.00000
+  -4.28172   0.00000   0.00000   0.00000   0.00000
+
+ ----- Coeficientes de Newton (b0, b1, b2 ... bn) -----
+  -6.000000   1.051170   0.575150   0.209700   0.068905
+
+ ----- Coeficientes de Newton (bn, bn-1, bn-2 ... b0) -----
+   0.068905   0.209700   0.575150   1.051170  -6.000000
+
+O Polinomio das Diferencas Dividas eh : [(0.068905*x^4) +(0.2097*x^3) +(0.57515*x^2) +(1.0512*x^) +(-6)]
+O Valor do Ponto [1] Interporlado por Newton eh : [-4.28172]
+
